@@ -44,17 +44,6 @@ bool Board::CheckHorizontal() {
             return false;
         }
     }
-    // for(int col = 0; col < 3; ++col) {
-    //     int winPoint = 0;
-    //     for(int row = 0; row < 3; ++row, ++winPoint) {
-    //         if(board[coords[row][col]] != currentMove) {
-    //             break;
-    //         }
-    //     }
-    //     if(winPoint == 3) {
-    //         return true;
-    //     }
-    // }
     return true;
 }
 
@@ -65,38 +54,16 @@ bool Board::CheckVertical() {
         }
     }
     return true;
-    // for(int col = 0; col < 3; ++col) {
-    //     int winPoint = 0;
-    //     for(int row = 0; row < 3; ++row, ++winPoint) {
-    //         if(board[coords[col][row]] != currentMove) {
-    //             break;
-    //         }
-    //     }
-    //     if(winPoint == 3) {
-    //         return true;
-    //     }
-    // }
-    // return false;
 }
 
 bool Board::CheckDiagonal() {
-    bool check = true;
-    for(int row = 0, col = 0; row < 3 && col < 3; ++row, ++col) {// check right diagonal
-        if(board[coords[row][col]] != currentMove) {
-            check = false;
-            break;
-        }
+    if(equals3(board[coords[0][0]], board[coords[1][1]], board[coords[2][2]])) {
+        return true;
     }
 
-    if(check) return true;
-
-    check = true;
-    for(int row = 2, col = 0; row >= 0, col < 3; --row, ++col) { // check left diagonal
-        if(board[coords[row][col]] != currentMove) {
-            check = false;
-            break;
-        }
+    if(equals3(board[coords[2][0]], board[coords[1][1]], board[coords[0][2]])) {
+        return false;
     }
 
-    return check;
+    return false;
 }
