@@ -5,7 +5,7 @@ std::tuple<int, int> Player::GetPosition() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Player& player) {
-    os << "Player: enter input: ";
+    os << "Enter position: ";
     return os;
 }
 

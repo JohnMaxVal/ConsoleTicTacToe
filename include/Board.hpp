@@ -8,20 +8,18 @@
 class Board
 {
 public:
+    Board() = default;
+
     void Draw();
-    void Update(int x, int y);
-    void NextPlayer();
-    bool CheckWin();
-    bool IsHumanTurn();
+    void UpdateCell(int x, int y, char value);
+    char GetCellValue(int x, int y);
+    char CheckWin();
 
 private:
-    int GetColumn(int x, int y);
-    bool CheckHorizontal();
-    bool CheckVertical();
-    bool CheckDiagonal();
+    bool IsMovesLeft();
 
 private:
-    char board[92] = 
+    char board[91] = 
     {
         '+', '-', '-', '-', '+', '-', '-', '-', '+', '-', '-', '-', '+',
         '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|',
@@ -36,7 +34,6 @@ private:
         { 41, 45, 49 },
         { 67, 71, 75 }
     };
-    bool human {true};
-    int countMoves {1};
-    char currentMove {'X'};
+    char _currentPlayer;
+    char _aiPlayer;
 };
