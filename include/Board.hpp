@@ -14,8 +14,6 @@ public:
     void UpdateCell(int x, int y, char value);
     char GetCellValue(int x, int y);
     char CheckWin();
-
-private:
     bool IsMovesLeft();
 
 private:

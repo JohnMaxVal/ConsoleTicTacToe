@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     char currentPlayer = 'X';
     char aiPlayer;
 
-    std::cout << "Choose role: " << std::flush;
+    std::cout << "Choose (X/O): " << std::flush;
     char role;
     std::cin >> role;
 
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
         char checkWin = board->CheckWin();
         if(checkWin != ' ') {
             board->Draw();
-            if(checkWin == 'T') {
+            if(!board->IsMovesLeft()) {
                 std::cout << "Tie!" << std::endl;
             }
             else {

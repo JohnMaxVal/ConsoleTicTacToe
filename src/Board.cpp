@@ -36,23 +36,23 @@ char Board::CheckWin() {
         winner = board[coords[2][0]];
     }
 
-    if(!IsMovesLeft()) {
-        return 'T';
-    }
+    // if(!IsMovesLeft()) {
+    //     return 'T';
+    // }
 
     return winner;
 }
 
 void Board::UpdateCell(int x, int y, char value) {
     if((x < 0 || x > 3) || (y < 0 || y > 3)) {
-        throw std::out_of_range("GetColumn: input is out of bound");
+        throw std::out_of_range("UpdateCell: input is out of bound");
     }
     board[coords[y][x]] = value;
 }
 
 char Board::GetCellValue(int x, int y) {
     if((x < 0 || x > 3) || (y < 0 || y > 3)) {
-        throw std::out_of_range("GetColumn: input is out of bound");
+        throw std::out_of_range("GetCellValue: input is out of bound");
     }
     return board[coords[y][x]];
 }

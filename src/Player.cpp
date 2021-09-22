@@ -5,7 +5,7 @@ std::tuple<int, int> Player::GetPosition() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Player& player) {
-    os << "Enter position: ";
+    os << "Enter x and y coordinates of a cell: ";
     return os;
 }
 

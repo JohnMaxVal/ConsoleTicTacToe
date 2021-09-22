@@ -9,4 +9,4 @@ INCLUDES = -I./include/
 SRC = ./src/*cpp
 
 all:
-	$(CC) $(DEBUG_FLAG) $(C_FLAGS) $(INCLUDES) $(SRC) main.cpp -o ${PG_NAME}
+	$(CC) $(DEBUG_FLAG) $(C_FLAGS) $(INCLUDES) $(SRC) main.cpp -o ${PG_NAME}.exe

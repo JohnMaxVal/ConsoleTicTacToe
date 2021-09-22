@@ -5,7 +5,11 @@
 struct AIMove
 {
     AIMove() = default;
-    AIMove(int score) : score {score} {}
+    AIMove(int score) : 
+        score {score},
+        x{0},
+        y{0} 
+    {}
     
     int x;
     int y;
