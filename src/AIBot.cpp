@@ -27,10 +27,6 @@ AIMove AIBot::GetBestMove(Board& board, char player) {
     else if(!board.IsMovesLeft()) {
         return AIMove(0);
     }
-    // else if(winner == 'T') {
-    //     return AIMove(0);
-    // }
-
 
     std::vector<AIMove> moves;
 

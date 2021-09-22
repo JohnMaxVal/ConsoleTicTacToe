@@ -36,10 +36,6 @@ char Board::CheckWin() {
         winner = board[coords[2][0]];
     }
 
-    // if(!IsMovesLeft()) {
-    //     return 'T';
-    // }
-
     return winner;
 }
 
